@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title encryption app
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='lib/css/styles.css')
+  body
+    a.back
+    #stage
+      #step1
+        .content
+          h1 Choose a method
+          a.button.encrypt Encrypt a file
+          a.button.decrypt Decrypt a file
+      #step2
+        .content.if-encrypt
+          h3 Choose which file to encrypt
+          p.info An encrypted copy of the file will be created.
+          a.button.browse Browse
+          input#encrypt-input(type='file')
+        .content.if-decrypt
+          h3 Choose which file to decrypt
+          p.info Only files encrypted by this tool are accepted.
+          a.button.browse Browse
+          input#decrypt-input(type='file')
+      #step3
+        .content.if-encrypt
+          h3 Enter a pass phrase
+          p.info You must remember.
+          input(type='password')
+          a.button.process Encrypt!
+        .content.if-decrypt
+          h3 Enter the pass phrase
+          p.info Enter the pass phrase that was used to encrypt this file.
+          input(type='password')
+          a.button.process Decrypt!
+      #step4
+        .content
+          h3 Your file is ready!
+          a.button.download Save a file
+    span#modal-info
+  script(src='lib/js/aes.js')
+  script(src='lib/js/jquery.min.js')
+  script(src='lib/js/bootstrap.min.js')
+  script(src='lib/js/script.js')
+  script(src='lib/js/init.js')

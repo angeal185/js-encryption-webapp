@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>encryption app</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="lib/css/styles.css">
+</head>
+<body>
+	<a class="back"></a>
+	<div id="stage">
+		<div id="step1">
+			<div class="content">
+				<h1>Choose a method</h1>
+				<a class="button encrypt">Encrypt a file</a>
+				<a class="button decrypt">Decrypt a file</a>
+			</div>
+		</div>
+		<div id="step2">
+			<div class="content if-encrypt">
+				<h3>Choose which file to encrypt</h3>
+				<p  class="info">An encrypted copy of the file will be created.</p>
+				<a class="button browse">Browse</a>
+				<input type="file" id="encrypt-input" />
+			</div>
+			<div class="content if-decrypt">
+				<h3>Choose which file to decrypt</h3>
+				<p  class="info">Only files encrypted by this tool are accepted.</p>
+				<a class="button  browse">Browse</a>
+				<input type="file" id="decrypt-input" />
+			</div>
+		</div>
+		<div id="step3">
+			<div class="content if-encrypt">
+				<h3>Enter a pass phrase</h3>
+				<p class="info">You must remember.</p>
+				<input type="password" />
+				<a class="button  process">Encrypt!</a>
+			</div>
+			<div class="content if-decrypt">
+				<h3>Enter the pass phrase</h3>
+				<p  class="info">Enter the pass phrase that was used to encrypt this file.</p>
+				<input type="password" />
+				<a class="button  process ">Decrypt!</a>
+			</div>
+		</div>
+		<div id="step4">
+			<div class="content">
+				<h3>Your file is ready!</h3>
+				<a class="button  download ">Save a file</a>
+			</div>
+		</div>
+	</div>
+  <span id="modal-info"></span>
+</body>
+<script src="lib/js/aes.js"></script>
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/script.js"></script>
+<script src="lib/js/init.js"></script>
+</html>
